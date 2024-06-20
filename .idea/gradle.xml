@@ -14,6 +14,7 @@
             <option value="$PROJECT_DIR$/searchFeature" />
             <option value="$PROJECT_DIR$/searchSelectedFeature" />
             <option value="$PROJECT_DIR$/sharedModule" />
+            <option value="$PROJECT_DIR$/ticketsFeature" />
           </set>
         </option>
         <option name="resolveExternalAnnotations" value="false" />
