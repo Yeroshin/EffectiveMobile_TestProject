@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/search_selected_navigation"
+    app:startDestination="@id/searchSelected">
+
+    <fragment
+        android:id="@+id/searchSelected"
+        android:name="com.yes.searchselectedfeature.presentation.ui.SearchSelectedScreen"
+        android:label="@string/menu"
+         >
+
+        <deepLink
+            app:uri="android-app://searchSelectedScreen/{departure}/{arrival}" />
+        <argument
+            android:name="departure"
+            app:argType="string" />
+        <argument
+            android:name="arrival"
+            app:argType="string" />
+
+    </fragment>
+
+
+
+
+</navigation>

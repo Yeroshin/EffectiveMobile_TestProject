@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="96dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="47dp"
+        android:layout_marginRight="16dp"
+        app:cardBackgroundColor="@color/Grey_2"
+        app:cardCornerRadius="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="14dp"
+                android:layout_height="12dp"
+                android:layout_marginLeft="13dp"
+                android:layout_marginTop="42dp"
+                android:layout_marginBottom="42dp"
+                app:srcCompat="@drawable/arrow" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="8dp"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/search_selected_departure"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="18dp"
+                        android:layout_marginBottom="11dp"
+                        android:layout_weight="1"
+                        android:textColor="@color/White"
+                        android:textSize="16sp"
+                        tools:text="Минск" />
+
+                    <ImageView
+                        android:id="@+id/swap"
+                        android:layout_width="12dp"
+                        android:layout_height="12dp"
+                        android:layout_marginTop="24dp"
+                        android:layout_marginRight="22dp"
+                        app:srcCompat="@drawable/up_down_arrow" />
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/divider"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/Grey_4" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/search_selected_arrival"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="17dp"
+                        android:layout_weight="1"
+                        android:textColor="@color/White"
+                        android:textSize="16sp"
+                        tools:text="Сочи" />
+
+                    <ImageView
+                        android:id="@+id/imageView3"
+                        android:layout_width="9dp"
+                        android:layout_height="9dp"
+                        android:layout_marginTop="13dp"
+                        android:layout_marginRight="24dp"
+                        android:layout_marginBottom="24dp"
+                        app:srcCompat="@drawable/cross" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="33dp"
+        android:layout_marginTop="13dp"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <com.google.android.material.chip.ChipGroup
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="16dp">
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/arrival_date"
+                    style="@style/Chip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="33dp"
+                    android:checkable="false"
+                    android:text="обратно"
+                    android:textSize="14sp"
+                    app:chipIcon="@drawable/plus"
+                    app:chipIconVisible="true"
+                    app:closeIconVisible="false" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/departure_date"
+                    style="@style/Chip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="33dp"
+                    android:checkable="false"
+                    android:text="24 фев, сб"
+                    android:textSize="14sp"
+                    app:chipIcon="@drawable/plus"
+                    app:chipIconVisible="true"
+                    app:closeIconVisible="false" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/pas_count"
+                    style="@style/Chip"
+                    android:layout_width="match_parent"
+                    android:layout_height="33dp"
+                    android:checkable="false"
+                    android:text="1,эконом"
+                    android:textSize="14sp"
+                    app:chipIcon="@drawable/plus"
+                    app:chipIconVisible="true"
+                    app:closeIconVisible="false" />
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/filters"
+                    style="@style/Chip"
+                    android:layout_width="match_parent"
+                    android:layout_height="33dp"
+                    android:checkable="false"
+                    android:text="фильтры"
+                    android:textSize="14sp"
+                    app:chipIcon="@drawable/plus"
+                    app:chipIconVisible="true"
+                    app:closeIconVisible="false" />
+            </com.google.android.material.chip.ChipGroup>
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="288dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginRight="16dp"
+        app:cardBackgroundColor="@color/Grey_1"
+        app:cardCornerRadius="16dp" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/sfprodisplayregular"
+                android:text="Прямые рельсы"
+                android:textColor="@color/White"
+                android:textSize="20sp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="16dp"
+                android:layout_weight="1"
+                tools:listitem="@layout/search_selected_item" />
+
+            <Button
+                android:id="@+id/button3"
+                android:layout_width="match_parent"
+                android:layout_height="42dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="6dp"
+                android:background="#00000000"
+                android:fontFamily="@font/sfprodisplayregular"
+                android:text="Показать все"
+                android:textAllCaps="false"
+                android:textColor="#2261bc"
+                android:textSize="16sp"
+                android:visibility="invisible" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="23dp"
+        android:layout_marginRight="16dp"
+        android:background="@drawable/button"
+        android:fontFamily="@font/sfprodisplayregular"
+        android:text="Посмотреть все билеты"
+        android:textAllCaps="false"
+        android:textSize="16sp" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="51dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginRight="16dp"
+        app:cardBackgroundColor="#242529"
+        app:cardCornerRadius="8dp" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginLeft="20dp"
+                android:background="@drawable/bell"
+                android:backgroundTint="#2261bc" />
+
+            <Switch
+                android:id="@+id/switch1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/sfprodisplayregular"
+                android:text="Подписка на цену"
+                android:textSize="16sp" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

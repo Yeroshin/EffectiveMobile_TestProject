@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/avia_tickets">
+
+    <fragment
+        android:id="@+id/avia_tickets"
+        android:name="com.yes.mainfeature.presentation.ui.MainScreen"
+        android:label="@string/menu"
+        tools:layout="@layout/activity_main" />
+
+    <fragment
+        android:id="@+id/hotels"
+        android:name="com.yes.effectivemobile.presentation.ui.StubScreen"
+        android:label="@string/stub"
+        tools:layout="@layout/stub" />
+    <fragment
+        android:id="@+id/shorter"
+        android:name="com.yes.effectivemobile.presentation.ui.StubScreen"
+        android:label="@string/stub"
+        tools:layout="@layout/stub" />
+    <fragment
+        android:id="@+id/subscriptions"
+        android:name="com.yes.effectivemobile.presentation.ui.StubScreen"
+        android:label="@string/stub"
+        tools:layout="@layout/stub" />
+    <fragment
+        android:id="@+id/profile"
+        android:name="com.yes.effectivemobile.presentation.ui.StubScreen"
+        android:label="@string/stub"
+        tools:layout="@layout/stub" />
+
+
+
+</navigation>

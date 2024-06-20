@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">avia sales</string>
+    <string name="menu">menu</string>
+    <string name="stub">stub</string>
+    <string name="search_for_cheap_flights">Поиск дешевых авиабилетов</string>
+    <string name="fly_away_musically">Музыкально отлететь</string>
+    <string name="show_all_places">Показать все места</string>
+    <string name="air_tickets">Авиабилеты</string>
+    <string name="hotels">Отели</string>
+    <string name="shorter">Короче</string>
+    <string name="subscriptions">Подписки</string>
+    <string name="profile">Профиль</string>
+</resources>
