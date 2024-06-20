@@ -24,11 +24,7 @@ class SearchSelectedViewModel(
     }
 
     override fun handleEvent(event: SearchSelectedContract.Event) {
-        when (event) {
-            Event.OnGetOffers -> {}
-            is Event.OnDepartureEntered -> {}
-            is Event.OnArrivalEntered -> {}
-        }
+
     }
     private fun getFlights(){
         withUseCaseScope(
