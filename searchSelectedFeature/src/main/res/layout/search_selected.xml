@@ -132,11 +132,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="33dp"
                     android:checkable="false"
-                    android:text="24 фев, сб"
                     android:textSize="14sp"
-                    app:chipIcon="@drawable/plus"
                     app:chipIconVisible="true"
-                    app:closeIconVisible="false" />
+                    app:closeIconVisible="false"
+                    tools:text="24 фев, сб" />
 
                 <com.google.android.material.chip.Chip
                     android:id="@+id/pas_count"
@@ -146,7 +145,8 @@
                     android:checkable="false"
                     android:text="1,эконом"
                     android:textSize="14sp"
-                    app:chipIcon="@drawable/plus"
+                    app:chipIcon="@drawable/profile"
+                    app:chipIconSize="10dp"
                     app:chipIconVisible="true"
                     app:closeIconVisible="false" />
 
@@ -158,7 +158,7 @@
                     android:checkable="false"
                     android:text="фильтры"
                     android:textSize="14sp"
-                    app:chipIcon="@drawable/plus"
+                    app:chipIcon="@drawable/settings"
                     app:chipIconVisible="true"
                     app:closeIconVisible="false" />
             </com.google.android.material.chip.ChipGroup>
@@ -221,7 +221,7 @@
     </androidx.cardview.widget.CardView>
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/button_tickets_search"
         android:layout_width="match_parent"
         android:layout_height="42dp"
         android:layout_marginLeft="16dp"

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/tickets_navigation"
+    app:startDestination="@id/tickets">
+
+    <fragment
+        android:id="@+id/tickets"
+        android:name="com.yes.ticketsfeature.presentation.ui.TicketsScreen"
+        android:label="@string/menu"
+        >
+
+        <deepLink
+            app:uri="android-app://ticketsScreen/{departure}/{arrival}/{departure_date}/{pass_count}" />
+        <argument
+            android:name="departure"
+            app:argType="string" />
+        <argument
+            android:name="arrival"
+            app:argType="string" />
+        <argument
+            android:name="departure_date"
+            app:argType="string" />
+        <argument
+            android:name="pass_count"
+            app:argType="string" />
+
+    </fragment>
+
+
+
+
+</navigation>

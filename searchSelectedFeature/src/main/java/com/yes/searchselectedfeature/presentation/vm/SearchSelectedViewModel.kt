@@ -23,8 +23,15 @@ class SearchSelectedViewModel(
         )
     }
 
-    override fun handleEvent(event: SearchSelectedContract.Event) {
-
+    override fun handleEvent(event: Event) {
+        when (event) {
+            is Event.OnDepartureTimeEntered -> setState {
+                copy(
+                    state = SearchSelectedContract.SearchSelectedState.Idle,
+                    departureTime = event.departureTime
+                )
+            }
+        }
     }
     private fun getFlights(){
         withUseCaseScope(

@@ -43,6 +43,7 @@ dependencies {
     implementation project(path: ':mainfeature')
     implementation project(path: ':searchFeature')
     implementation project(path: ':searchSelectedFeature')
+    implementation project(path: ':ticketsFeature')
 
     implementation libs.androidx.core.ktx
     implementation libs.androidx.appcompat

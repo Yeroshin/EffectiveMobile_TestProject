@@ -8,10 +8,13 @@ import com.yes.searchselectedfeature.presentation.ui.SearchSelectedScreen
 import com.yes.sharedmodule.di.component.DaggerSharedComponent
 import com.yes.sharedmodule.di.module.SharedModule
 import com.yes.sharedmodule.presentation.ui.BaseDependency
+import com.yes.ticketsfeature.di.components.DaggerTicketsComponent
+import com.yes.ticketsfeature.presentation.ui.TicketsScreen
 
 class YESApplication: Application(),
     MainScreen.DependencyResolver,
-SearchSelectedScreen.DependencyResolver{
+SearchSelectedScreen.DependencyResolver,
+TicketsScreen.DependencyResolver{
 
     private val sharedComponent by lazy {
         DaggerSharedComponent.builder()
@@ -27,6 +30,13 @@ SearchSelectedScreen.DependencyResolver{
 
     override fun resolveSearchSelectedScreenDependency(): BaseDependency {
         return DaggerSearchSelectedComponent.builder()
+            .sharedComponent(sharedComponent)
+            .build()
+            .getDependency()
+    }
+
+    override fun resolveTicketsDependency(): BaseDependency {
+        return DaggerTicketsComponent.builder()
             .sharedComponent(sharedComponent)
             .build()
             .getDependency()
