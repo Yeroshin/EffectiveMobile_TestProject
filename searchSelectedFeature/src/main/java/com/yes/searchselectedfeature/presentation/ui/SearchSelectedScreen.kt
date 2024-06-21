@@ -76,7 +76,7 @@ class SearchSelectedScreen : BaseFragment() {
     }
 
     override fun setUpView() {
-
+        (binding as SearchSelectedBinding).recyclerView.adapter = adapter
 
         (binding as SearchSelectedBinding).searchSelectedDeparture.text =
             Editable.Factory.getInstance().newEditable(
@@ -87,19 +87,19 @@ class SearchSelectedScreen : BaseFragment() {
                 arguments?.getString("arrival")
             )
         (binding as SearchSelectedBinding).swap.setOnClickListener {
-            val arrival = binder.searchSelectedArrival.text
-            binder.searchSelectedArrival.text = Editable.Factory.getInstance().newEditable(
-                binder.searchSelectedDeparture.text
+            val arrival = (binding as SearchSelectedBinding).searchSelectedArrival.text
+            (binding as SearchSelectedBinding).searchSelectedArrival.text = Editable.Factory.getInstance().newEditable(
+                (binding as SearchSelectedBinding).searchSelectedDeparture.text
             )
-            binder.searchSelectedDeparture.text = Editable.Factory.getInstance().newEditable(
+            (binding as SearchSelectedBinding).searchSelectedDeparture.text = Editable.Factory.getInstance().newEditable(
                 arrival
             )
         }
-        binder.departureDate.text =
+        (binding as SearchSelectedBinding).departureDate.text =
             SimpleDateFormat("dd MMM, EEE", Locale.getDefault()).format(Date())
 
 
-        binder.departureDate.setOnClickListener {
+        (binding as SearchSelectedBinding).departureDate.setOnClickListener {
             DatePickerDialog(
                 requireContext(),
                 dateDeparture,
@@ -108,7 +108,7 @@ class SearchSelectedScreen : BaseFragment() {
                 myCalendar.get(Calendar.DAY_OF_MONTH)
             ).show()
         }
-        binder.arrivalDate.setOnClickListener {
+        (binding as SearchSelectedBinding).arrivalDate.setOnClickListener {
             DatePickerDialog(
                 requireContext(),
                 dateArrival,
@@ -117,12 +117,12 @@ class SearchSelectedScreen : BaseFragment() {
                 myCalendar.get(Calendar.DAY_OF_MONTH)
             ).show()
         }
-        binder.recyclerView.layoutManager =
+        (binding as SearchSelectedBinding).recyclerView.layoutManager =
             LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
         viewModel.setEvent(
             SearchSelectedContract.Event.OnDepartureTimeEntered(departureTime = Date())
         )
-        binder.buttonTicketsSearch.setOnClickListener {
+        (binding as SearchSelectedBinding).buttonTicketsSearch.setOnClickListener {
             (viewModel.uiState.value as SearchSelectedContract.State).departureTime?.let {
                 (activity as NavCommand).navigate(
                     "android-app://ticketsScreen/${binder.searchSelectedDeparture.text}/${binder.searchSelectedArrival.text}/${mapDateToString(it)}/${"1"}"
@@ -151,7 +151,7 @@ class SearchSelectedScreen : BaseFragment() {
 
     private fun dataLoaded(state: SearchSelectedContract.State) {
         state.flights?.let {
-            binder.recyclerView.adapter = adapter
+            (binding as SearchSelectedBinding).recyclerView.adapter = adapter
             adapter.items = it
         }
     }
