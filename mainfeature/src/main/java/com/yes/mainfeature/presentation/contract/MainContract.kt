@@ -9,7 +9,7 @@ class MainContract {
         sealed class Event : UiEvent {
             data object OnGetOffers : Event()
             data class OnDepartureEntered(val departure:String): Event()
-            data class OnArrivalEntered(val arrival:String): Event()
+
         }
         data class State(
             val state:MainState,

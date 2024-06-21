@@ -5,7 +5,6 @@ import androidx.lifecycle.ViewModelProvider
 import com.yes.mainfeature.data.mapper.Mapper
 import com.yes.mainfeature.domain.usecase.GetDepartureUseCase
 import com.yes.mainfeature.domain.usecase.GetOffersUseCase
-import com.yes.mainfeature.domain.usecase.SaveArrivalUseCase
 import com.yes.mainfeature.domain.usecase.SaveDepartureUseCase
 import com.yes.mainfeature.presentation.contract.MainContract
 import com.yes.sharedmodule.presentation.vm.BaseViewModel
@@ -15,7 +14,7 @@ import com.yes.mainfeature.presentation.contract.MainContract.Event
 import com.yes.mainfeature.presentation.mapper.UiMapper
 
 class MainViewModel(
-    private val saveArrivalUseCase: SaveArrivalUseCase,
+
     private val getDepartureUseCase: GetDepartureUseCase,
     private val saveDepartureUseCase: SaveDepartureUseCase,
     private val getOffersUseCase: GetOffersUseCase,
@@ -55,7 +54,7 @@ class MainViewModel(
         when (event) {
             Event.OnGetOffers -> getOffers()
             is Event.OnDepartureEntered -> saveDeparture(event.departure)
-            is Event.OnArrivalEntered -> saveArrival(event.arrival)
+
         }
     }
     private fun getDeparture(){
@@ -85,20 +84,10 @@ class MainViewModel(
             }
         )
     }
-    private fun saveArrival(arrival:String){
-        withUseCaseScope(
-            //  loadingUpdater = { isLoading -> updateUiState { copy(isLoading = isLoading) } },
-            onError = { println(it.message) },
-            block = {
-                saveArrivalUseCase(
-                    SaveArrivalUseCase.Params(arrival)
-                )
-            }
-        )
-    }
+
 
     class Factory(
-        private val saveArrivalUseCase: SaveArrivalUseCase,
+
         private val getDepartureUseCase: GetDepartureUseCase,
         private val saveDepartureUseCase: SaveDepartureUseCase,
         private val getOffersUseCase: GetOffersUseCase,
@@ -107,7 +96,6 @@ class MainViewModel(
         override fun <T : ViewModel> create(modelClass: Class<T>): T {
             @Suppress("UNCHECKED_CAST")
             return MainViewModel(
-                saveArrivalUseCase,
                 getDepartureUseCase,
                 saveDepartureUseCase,
                 getOffersUseCase,

@@ -25,6 +25,7 @@ class MainActivity : AppCompatActivity(), NavCommand {
         super.onCreate(savedInstanceState)
         val binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
         navController = findNavController(R.id.nav_host_fragment_activity_main)
         navController?.let {
             binding.navView.setupWithNavController(it)

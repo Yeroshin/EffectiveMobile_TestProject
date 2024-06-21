@@ -26,7 +26,7 @@ class StubScreen : Fragment() {
         binding.searchToolbar.setOnMenuItemClickListener {
             when (it.itemId) {
                 R.id.action_back -> {
-                    findNavController().popBackStack()
+                    findNavController().navigateUp()
                     true
                 }
                 else -> false

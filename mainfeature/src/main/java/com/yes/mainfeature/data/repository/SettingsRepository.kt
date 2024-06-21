@@ -14,7 +14,6 @@ class SettingsRepository(
 ):ISettingsRepository {
     object PreferencesKeys {
         val DEPARTURE = stringPreferencesKey("departure")
-        val ARRIVAL = stringPreferencesKey("arrival")
     }
     override suspend fun setLastDeparture(lastDeparture: String) {
         settingsDataSource.set(lastDeparture, DEPARTURE)
@@ -24,8 +23,6 @@ class SettingsRepository(
         return settingsDataSource.subscribe(DEPARTURE, "Откуда - Москва")
     }
 
-    override suspend fun setArrival(arrival: String) {
-        settingsDataSource.set(arrival, ARRIVAL)
-    }
+
 
 }

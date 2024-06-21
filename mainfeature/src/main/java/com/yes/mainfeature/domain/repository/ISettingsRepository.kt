@@ -7,6 +7,6 @@ interface ISettingsRepository {
     suspend fun setLastDeparture(lastDeparture: String)
     fun subscribeLastDeparture(): Flow<String>
 
-    suspend fun setArrival(arrival: String)
+
 
 }

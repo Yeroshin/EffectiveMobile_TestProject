@@ -6,7 +6,6 @@ import com.yes.mainfeature.data.repository.OfferRepository
 import com.yes.mainfeature.data.repository.SettingsRepository
 import com.yes.mainfeature.domain.usecase.GetDepartureUseCase
 import com.yes.mainfeature.domain.usecase.GetOffersUseCase
-import com.yes.mainfeature.domain.usecase.SaveArrivalUseCase
 import com.yes.mainfeature.domain.usecase.SaveDepartureUseCase
 import com.yes.mainfeature.presentation.mapper.UiMapper
 import com.yes.mainfeature.presentation.vm.MainViewModel
@@ -93,27 +92,18 @@ class MainModule {
             settingsRepository
         )
     }
-    @Provides
-    fun providesSaveArrivalUseCase(
-        @IoDispatcher dispatcher: CoroutineDispatcher,
-        settingsRepository: SettingsRepository
-    ): SaveArrivalUseCase {
-        return SaveArrivalUseCase(
-            dispatcher,
-            settingsRepository
-        )
-    }
+
 
     @Provides
     fun providesMainViewModelFactory(
-        saveArrivalUseCase: SaveArrivalUseCase,
+
         getDepartureUseCase: GetDepartureUseCase,
         saveDepartureUseCase: SaveDepartureUseCase,
         getOffersUseCase: GetOffersUseCase,
         mapper: UiMapper
     ): MainViewModel.Factory {
         return MainViewModel.Factory(
-            saveArrivalUseCase,
+
             getDepartureUseCase,
             saveDepartureUseCase,
             getOffersUseCase,
