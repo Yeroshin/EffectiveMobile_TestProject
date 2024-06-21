@@ -3,6 +3,7 @@ package com.yes.ticketsfeature.presentation.contract
 import com.yes.sharedmodule.presentation.ui.UiEffect
 import com.yes.sharedmodule.presentation.ui.UiEvent
 import com.yes.sharedmodule.presentation.ui.UiState
+import com.yes.ticketsfeature.presentation.model.TicketUi
 import com.yes.ticketsfeature.presentation.model.TicketsUi
 
 class TicketsContract {
@@ -12,7 +13,7 @@ class TicketsContract {
         }
         data class State(
             val state: TicketsState,
-            val tickets: TicketsUi?=null,
+            val tickets: List<TicketUi>?=null,
         ) : UiState
 
         sealed class TicketsState {
