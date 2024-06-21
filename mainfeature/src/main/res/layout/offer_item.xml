@@ -24,17 +24,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="TextView"
+        android:fontFamily="@font/sfprodisplayregular"
+        android:textColor="@color/White"
         android:textSize="16sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        tools:text="Die Antwood" />
 
     <TextView
         android:id="@+id/offer_town"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="TextView"
-        android:textSize="14sp" />
+        android:fontFamily="@font/sfprodisplayregular"
+        android:textColor="@color/White"
+        android:textSize="14sp"
+        tools:text="Будапешт" />
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -55,8 +59,9 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:fontFamily="@font/sfprodisplayregular"
-            android:text="TextView"
-            android:textSize="14sp" />
+            android:textColor="@color/White"
+            android:textSize="14sp"
+            tools:text="от 2 269Р" />
 
     </LinearLayout>
 

@@ -1,7 +1,6 @@
 package com.yes.mainfeature.data.repository
 
 import androidx.datastore.preferences.core.stringPreferencesKey
-import com.yes.mainfeature.data.repository.SettingsRepository.PreferencesKeys.ARRIVAL
 import com.yes.mainfeature.data.repository.SettingsRepository.PreferencesKeys.DEPARTURE
 import com.yes.mainfeature.domain.repository.ISettingsRepository
 import com.yes.sharedmodule.data.dataSource.SettingsDataSource
