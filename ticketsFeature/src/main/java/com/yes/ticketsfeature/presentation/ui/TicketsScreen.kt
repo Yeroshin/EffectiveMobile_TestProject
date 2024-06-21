@@ -98,16 +98,27 @@ class TicketsScreen : BaseFragment() {
         ) {
 
             bind {
-                item.badge?.let {
+                if (item.badge==null){
+                    binding.badge.visibility = View.INVISIBLE
+                }else{
+                    binding.badge.visibility = View.VISIBLE
+                    binding.badgeText.text = item.badge
+                }
+               /* item.badge?.let {
                     binding.badge.visibility = View.VISIBLE
                     binding.badgeText.text = it
                 } ?: {
                     binding.badge.visibility = View.INVISIBLE
-                }
+                }*/
                 binding.price.text = item.price
                 binding.departureTime.text = item.departureTime
                 binding.arrivalTime.text = item.arrivalTime
-
+                binding.departureAirport.text=item.departureAirport
+                binding.arrivalAirport.text=item.arrivalAirport
+                binding.transfer.text=if(item.hasTransfer){
+                    "/без пересадок"
+                }else{""}
+               // binding.transfer.visibility=View.VISIBLE
             }
         }
 

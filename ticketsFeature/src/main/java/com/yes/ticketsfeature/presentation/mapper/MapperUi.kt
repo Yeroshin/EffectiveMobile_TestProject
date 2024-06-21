@@ -5,18 +5,36 @@ import com.yes.ticketsfeature.presentation.model.TicketUi
 import com.yes.ticketsfeature.presentation.model.TicketsUi
 import java.text.SimpleDateFormat
 import java.util.Date
+import java.util.concurrent.TimeUnit
 
 class MapperUi {
     fun map(tickets: Tickets?):List<TicketUi>?{
 
         return tickets?.tickets?.map {
-            val t=mapDateToString(mapStringToDate(it.departure.date))
-            val x=t
+           val ar=mapStringToDate(it.arrival.date)
+            val dep=mapStringToDate(it.departure.date)
+            val dif=ar.time-dep.time
+            val hoursDifference = dif.toDouble() / (1000 * 60 * 60)
+           // val hoursDifference = TimeUnit.MILLISECONDS.toHours(dif)
+            val formattedString = "%.1f ч".format(hoursDifference.toDouble()).replace(".0", "")
+            if(it.badge=="null"){
+                val t:String=it.badge
+            }else{
+                val t:String=it.badge
+            }
+            if(it.badge==null){
+                val t:String=it.badge
+            }else{
+                val t:String=it.badge
+            }
             TicketUi(
                 it.badge,
                 formatNumberWithSpaces(it.price.value),
                 mapDateToString(mapStringToDate(it.departure.date)),
-                mapDateToString(mapStringToDate(it.arrival.date))
+                mapDateToString(mapStringToDate(it.arrival.date)),
+                it.departure.airport,
+                it.arrival.airport,
+                it.has_transfer
             )
         }
     }

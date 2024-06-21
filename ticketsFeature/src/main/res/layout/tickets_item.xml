@@ -5,8 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:clipToPadding="false"
-    android:paddingTop="16dp"
-    android:paddingBottom="16dp">
+    android:paddingTop="24dp">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -101,6 +100,8 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
+                            android:fontFamily="@font/sfprodisplayregular"
+                            android:textColor="@color/White"
                             tools:text="/без пересадок" />
 
                     </LinearLayout>
@@ -157,7 +158,7 @@
         android:layout_marginTop="-8dp"
         android:background="@drawable/rounded_shape50"
         android:backgroundTint="@color/Blue_variant"
-        android:visibility="visible"
+        android:visibility="invisible"
         app:cardCornerRadius="60dp">
 
         <TextView
