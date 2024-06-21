@@ -21,9 +21,10 @@
 
             <ImageView
                 android:id="@+id/back"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:layout_marginTop="16dp"
+                android:layout_width="14dp"
+                android:layout_height="12dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="22dp"
                 android:layout_marginBottom="16dp"
                 android:background="@drawable/arrow"
                 android:backgroundTint="@color/Blue_variant" />
@@ -40,6 +41,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:fontFamily="@font/sfprodisplayregular"
+                    android:textColor="@color/White"
+                    android:textSize="16sp"
                     tools:text="Москва - Сочи" />
 
                 <TextView
@@ -47,6 +51,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
+                    android:fontFamily="@font/sfprodisplayregular"
+                    android:textColor="@color/Grey_6"
                     tools:text="23 февраля, 1 пассажир" />
             </LinearLayout>
         </LinearLayout>
@@ -59,7 +65,7 @@
         android:layout_marginLeft="16dp"
         android:layout_marginTop="26dp"
         android:layout_marginRight="16dp"
-        android:layout_marginBottom="14dp"
+        android:layout_marginBottom="70dp"
         tools:listitem="@layout/tickets_item" />
 
 

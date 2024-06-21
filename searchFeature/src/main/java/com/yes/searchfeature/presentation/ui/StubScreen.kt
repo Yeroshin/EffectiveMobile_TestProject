@@ -9,20 +9,16 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.viewbinding.ViewBinding
 import com.yes.searchfeature.R
-import com.yes.searchfeature.databinding.StubBinding
+import com.yes.searchfeature.databinding.StubsBinding
 
 class StubScreen : Fragment() {
-
-    private lateinit var binding: StubBinding
-
-
-
+    private lateinit var binding: StubsBinding
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = StubBinding.inflate(inflater, container, false)
+        binding = StubsBinding.inflate(inflater, container, false)
         return binding.root
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -36,19 +32,5 @@ class StubScreen : Fragment() {
                 else -> false
             }
         }
-
     }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return when (item.itemId) {
-            R.id.action_back -> {
-                findNavController().popBackStack()
-                true
-            }
-
-            else -> super.onOptionsItemSelected(item)
-        }
-    }
-
-
 }

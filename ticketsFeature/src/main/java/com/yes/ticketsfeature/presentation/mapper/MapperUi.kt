@@ -11,22 +11,6 @@ class MapperUi {
     fun map(tickets: Tickets?):List<TicketUi>?{
 
         return tickets?.tickets?.map {
-           val ar=mapStringToDate(it.arrival.date)
-            val dep=mapStringToDate(it.departure.date)
-            val dif=ar.time-dep.time
-            val hoursDifference = dif.toDouble() / (1000 * 60 * 60)
-           // val hoursDifference = TimeUnit.MILLISECONDS.toHours(dif)
-            val formattedString = "%.1f ч".format(hoursDifference.toDouble()).replace(".0", "")
-            if(it.badge=="null"){
-                val t:String=it.badge
-            }else{
-                val t:String=it.badge
-            }
-            if(it.badge==null){
-                val t:String=it.badge
-            }else{
-                val t:String=it.badge
-            }
             TicketUi(
                 it.badge,
                 formatNumberWithSpaces(it.price.value),
@@ -34,9 +18,19 @@ class MapperUi {
                 mapDateToString(mapStringToDate(it.arrival.date)),
                 it.departure.airport,
                 it.arrival.airport,
-                it.has_transfer
+                if (it.has_transfer){"/без пересадок"
+                }else{""},
+                timeDeference(it.arrival.date,it.departure.date)
             )
         }
+    }
+    private fun timeDeference(arrival:String,departure:String):String{
+        val ar=mapStringToDate(arrival)
+        val dep=mapStringToDate(departure)
+        val dif=ar.time-dep.time
+        val hoursDifference = dif.toDouble() / (1000 * 60 * 60)
+        return "%.1fч".format(hoursDifference).replace(".0", "")+" в пути"
+
     }
     private fun formatNumberWithSpaces(number: Int): String {
         val formattedNumber = String.format("%,d", number).replace(",", " ")

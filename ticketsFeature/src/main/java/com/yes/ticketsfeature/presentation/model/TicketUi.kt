@@ -11,7 +11,8 @@ data class TicketUi(
     val arrivalTime:String,
     val departureAirport:String,
     val arrivalAirport:String,
-    val hasTransfer:Boolean
+    val hasTransfer:String,
+    val flightTime:String
 
 
 ):IAdapterDelegate

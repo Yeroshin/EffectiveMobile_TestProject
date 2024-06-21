@@ -31,32 +31,19 @@ class SearchScreen(
 ) {
      lateinit var binding: SearchBinding
 
-  /*  override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        binding = SearchBinding.inflate(layoutInflater)
 
-
-        setContentView(binding.root)
-
-    }*/
   override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
       super.onViewCreated(view, savedInstanceState)
         binding.departure.text=Editable.Factory.getInstance().newEditable(
             arguments?.getString("departure")
         )
 
-
-     // val bottomSheet : FrameLayout = dialog?.findViewById(com.google.android.material.R.id.design_bottom_sheet)!!
-
-      // Height of the view
-    //  bottomSheet.layoutParams.height = ViewGroup.LayoutParams.MATCH_PARENT
       binding.bottomSheet.layoutParams.height = ViewGroup.LayoutParams.MATCH_PARENT
-      // Behavior of the bottom sheet
-     // val behavior = BottomSheetBehavior.from(binding.bottomSheet)
+
       val behavior = BottomSheetBehavior.from(binding.bottomSheet)
       behavior.apply {
-          peekHeight = resources.displayMetrics.heightPixels // Pop-up height
-          state = BottomSheetBehavior.STATE_EXPANDED // Expanded state
+          peekHeight = resources.displayMetrics.heightPixels
+          state = BottomSheetBehavior.STATE_EXPANDED
           skipCollapsed = true
 
           addBottomSheetCallback(object : BottomSheetBehavior.BottomSheetCallback() {
@@ -70,11 +57,6 @@ class SearchScreen(
     override fun getTheme() = com.yes.sharedmodule.R.style.NoBackgroundDialogTheme
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         binding = SearchBinding.inflate(inflater, container, false)
-
-       /* val toolbar = binding.toolbar
-        toolbar.setNavigationOnClickListener {
-            dismiss()
-        }*/
         binding.root.setBackgroundResource(R.drawable.rounded_shape)
         setUpView()
         return binding.root
@@ -101,7 +83,10 @@ class SearchScreen(
         adapter.items=items
 ///////////////////////
         binding.difficult.setOnClickListener{
-            findNavController().navigate(R.id.search_stub)
+            (activity as NavCommand).navigate(
+                "android-app://StubScreen"
+            )
+
         }
         binding.world.setOnClickListener{
             setArrival(
@@ -109,10 +94,16 @@ class SearchScreen(
             )
         }
         binding.calendar.setOnClickListener{
-            findNavController().navigate(R.id.search_stub)
+            (activity as NavCommand).navigate(
+                "android-app://StubScreen"
+            )
+
         }
         binding.fire.setOnClickListener{
-            findNavController().navigate(R.id.search_stub)
+            (activity as NavCommand).navigate(
+                "android-app://StubScreen"
+            )
+
         }
         binding .arrival.setOnEditorActionListener { _, actionId, _ ->
             if (actionId == EditorInfo.IME_ACTION_DONE) {

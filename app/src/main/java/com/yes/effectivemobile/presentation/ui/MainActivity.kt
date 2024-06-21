@@ -9,6 +9,7 @@ import androidx.navigation.NavDeepLinkRequest
 import androidx.navigation.Navigation
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.yes.effectivemobile.R
@@ -17,31 +18,18 @@ import com.yes.mainfeature.presentation.ui.MainScreen
 import com.yes.searchfeature.presentation.ui.SearchScreen
 import com.yes.sharedmodule.NavCommand
 
-class MainActivity : AppCompatActivity(),NavCommand {
+class MainActivity : AppCompatActivity(), NavCommand {
 
-    private var navController:NavController?=null
+    private var navController: NavController? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-
-         navController = findNavController(R.id.nav_host_fragment_activity_main)
-
-
-        val appBarConfiguration = AppBarConfiguration(
-            setOf(
-                R.id.avia_tickets, R.id.hotels, R.id.shorter, R.id.subscriptions, R.id.profile
-            )
-        )
-        // setupActionBarWithNavController(navController, appBarConfiguration)
+        navController = findNavController(R.id.nav_host_fragment_activity_main)
         navController?.let {
             binding.navView.setupWithNavController(it)
         }
-
     }
-
-
 
     override fun navigate(navigation: String) {
         navController?.navigate(
@@ -50,6 +38,4 @@ class MainActivity : AppCompatActivity(),NavCommand {
                 .build()
         )
     }
-
-
 }

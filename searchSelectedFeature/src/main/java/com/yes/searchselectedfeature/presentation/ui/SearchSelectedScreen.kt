@@ -7,6 +7,7 @@ import android.text.Editable
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.viewbinding.ViewBinding
 import com.hannesdorfmann.adapterdelegates4.ListDelegationAdapter
@@ -62,7 +63,7 @@ class SearchSelectedScreen : BaseFragment() {
             viewModel.setEvent(
                 SearchSelectedContract.Event.OnDepartureTimeEntered(departureTime = myCalendar.time)
             )
-            binder.departureDate.text = dateFormat.format(myCalendar.time)
+            (binding as SearchSelectedBinding).departureDate.text = dateFormat.format(myCalendar.time)
         }
     }
     private val dateArrival by lazy {
@@ -71,7 +72,7 @@ class SearchSelectedScreen : BaseFragment() {
             myCalendar.set(Calendar.MONTH, month)
             myCalendar.set(Calendar.DAY_OF_MONTH, day)
             val dateFormat = SimpleDateFormat("dd MMM, EEE", Locale.getDefault())
-            binder.arrivalDate.text = dateFormat.format(myCalendar.time)
+            (binding as SearchSelectedBinding).arrivalDate.text = dateFormat.format(myCalendar.time)
         }
     }
 
@@ -128,6 +129,9 @@ class SearchSelectedScreen : BaseFragment() {
                     "android-app://ticketsScreen/${binder.searchSelectedDeparture.text}/${binder.searchSelectedArrival.text}/${mapDateToString(it)}/${"1"}"
                 )
             }
+        }
+        (binding as SearchSelectedBinding).back.setOnClickListener {
+            findNavController().popBackStack()
         }
     }
     private fun mapDateToString(date:Date):String{

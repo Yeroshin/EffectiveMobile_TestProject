@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
     app:startDestination="@id/avia_tickets">
-
+    <include app:graph="@navigation/search_navigation" />
+    <include app:graph="@navigation/search_selected_navigation" />
+    <include app:graph="@navigation/tickets_navigation" />
     <fragment
         android:id="@+id/avia_tickets"
         android:name="com.yes.mainfeature.presentation.ui.MainScreen"
@@ -15,22 +17,22 @@
         android:id="@+id/hotels"
         android:name="com.yes.effectivemobile.presentation.ui.StubScreen"
         android:label="@string/stub"
-        tools:layout="@layout/stub" />
+        tools:layout="@layout/stubs" />
     <fragment
         android:id="@+id/shorter"
         android:name="com.yes.effectivemobile.presentation.ui.StubScreen"
         android:label="@string/stub"
-        tools:layout="@layout/stub" />
+        tools:layout="@layout/stubs" />
     <fragment
         android:id="@+id/subscriptions"
         android:name="com.yes.effectivemobile.presentation.ui.StubScreen"
         android:label="@string/stub"
-        tools:layout="@layout/stub" />
+        tools:layout="@layout/stubs" />
     <fragment
         android:id="@+id/profile"
         android:name="com.yes.effectivemobile.presentation.ui.StubScreen"
         android:label="@string/stub"
-        tools:layout="@layout/stub" />
+        tools:layout="@layout/stubs" />
 
 
 
